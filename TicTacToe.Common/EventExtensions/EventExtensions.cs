@@ -10,9 +10,9 @@ namespace TicTacToe.Common.EventExtensions
             eventHandler?.Invoke(sender, e);
         }
 
-        public static void Raise(this EventHandler eventHandler, object sender, EventArgs e)
+        public static void Raise(this EventHandler eventHandler, object sender)
         {
-            eventHandler?.Invoke(sender, e);
+            eventHandler?.Invoke(sender, EventArgs.Empty);
         }
     }
 }
