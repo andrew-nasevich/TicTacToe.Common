@@ -5,11 +5,12 @@ namespace TicTacToe.Common.EnumerableExtensions
 {
     public static class EnumerableExtensions
     {
-        public static void ForEach<T>(this IEnumerable<T> collection, int index, Action<int, T> action)
+        public static void ForEach<T>(this IEnumerable<T> collection, Action<T, int> action)
         {
+            var index = 0;
             foreach (var el in collection)
             {
-                action(index++, el);
+                action(el, index++);
             }
         }
 
